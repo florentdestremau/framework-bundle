@@ -97,6 +97,11 @@ trait DomCrawlerAssertionsTrait
         self::assertSelectorTextContains('title', $expectedTitle, $message);
     }
 
+    public static function assertPageBodyContains(string $expected, string $message = ''):void
+    {
+        self::assertSelectorTextContains('body', $expectedTitle, $message);
+    }
+
     public static function assertInputValueSame(string $fieldName, string $expectedValue, string $message = ''): void
     {
         self::assertThat(self::getCrawler(), LogicalAnd::fromConstraints(
